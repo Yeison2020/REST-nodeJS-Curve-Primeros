@@ -25,7 +25,7 @@ class Server {
       });
     });
     this.app.put("/api", function (req, res) {
-      res.json({
+      res.status(400).json({
         message: "Put Api",
       });
     });
@@ -35,7 +35,7 @@ class Server {
       });
     });
     this.app.post("/api", function (req, res) {
-      res.json({
+      res.status(201).json({
         message: "post Api",
       });
     });
