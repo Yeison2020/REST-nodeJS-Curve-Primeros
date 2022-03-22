@@ -39,6 +39,12 @@ class Server {
         message: "post Api",
       });
     });
+
+    this.app.patch("/api", function (req, res) {
+      res.json({
+        message: "patch Api",
+      });
+    });
   }
 
   listen() {
