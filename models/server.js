@@ -18,7 +18,8 @@ class Server {
     this.app.use(express.static("public"));
   }
   routes() {
-    this.app.get("/", function (req, res) {
+    // Home route will be replace for my middleware public I need to add api tp have another route
+    this.app.get("/api", function (req, res) {
       res.send("Hello World");
     });
   }
