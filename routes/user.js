@@ -1,4 +1,6 @@
 const { Router } = require("express");
+
+// Controllers functions
 const {
   userGet,
   userPut,

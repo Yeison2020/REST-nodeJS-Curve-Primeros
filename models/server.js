@@ -22,7 +22,8 @@ class Server {
   middlewares() {
     // CORS
     this.app.use(cors());
-    // Palabra clave app.use (To call my middlewares)
+    // Palabra clave app.use (To call my middlewares)\
+    // Home route default replacement
     this.app.use(express.static("public"));
   }
 
