@@ -1,5 +1,11 @@
 const { Router } = require("express");
-const { userGet } = require("../controllers/user");
+const {
+  userGet,
+  userPut,
+  userPatch,
+  userPost,
+  userDelete,
+} = require("../controllers/user");
 
 const router = Router();
 
@@ -10,32 +16,16 @@ router.get("/", userGet);
 
 //
 
-router.put("/", function (req, res) {
-  res.status(400).json({
-    message: "Put Api",
-  });
-});
+router.put("/", userPut);
 
 //
-router.delete("/", function (req, res) {
-  res.json({
-    message: "Delete Api",
-  });
-});
+router.delete("/", userDelete);
 
 //
 
-router.post("/", function (req, res) {
-  res.status(201).json({
-    message: "post Api",
-  });
-});
+router.post("/", userPost);
 
 //
-router.patch("/", function (req, res) {
-  res.json({
-    message: "patch Api",
-  });
-});
+router.patch("/", userPatch);
 
 module.exports = router;
