@@ -20,7 +20,24 @@ class Server {
   routes() {
     // Home route will be replace for my middleware public I need to add api tp have another route
     this.app.get("/api", function (req, res) {
-      res.send("Hello World");
+      res.json({
+        message: "Get Api",
+      });
+    });
+    this.app.put("/api", function (req, res) {
+      res.json({
+        message: "Put Api",
+      });
+    });
+    this.app.delete("/api", function (req, res) {
+      res.json({
+        message: "Delete Api",
+      });
+    });
+    this.app.post("/api", function (req, res) {
+      res.json({
+        message: "post Api",
+      });
     });
   }
 
