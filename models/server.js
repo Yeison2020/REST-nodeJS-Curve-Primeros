@@ -8,6 +8,9 @@ class Server {
     this.app = express();
     this.port = process.env.PORT;
 
+    // This help other developer to see how your path looks like for each of the routes
+    this.userPath = "/api/user";
+
     // Middleware they will be executed when run the app
     this.middlewares();
 
@@ -22,34 +25,10 @@ class Server {
     // Palabra clave app.use (To call my middlewares)
     this.app.use(express.static("public"));
   }
-  routes() {
-    // Home route will be replace for my middleware public I need to add api tp have another route
-    this.app.get("/api", function (req, res) {
-      res.json({
-        message: "Get Api",
-      });
-    });
-    this.app.put("/api", function (req, res) {
-      res.status(400).json({
-        message: "Put Api",
-      });
-    });
-    this.app.delete("/api", function (req, res) {
-      res.json({
-        message: "Delete Api",
-      });
-    });
-    this.app.post("/api", function (req, res) {
-      res.status(201).json({
-        message: "post Api",
-      });
-    });
 
-    this.app.patch("/api", function (req, res) {
-      res.json({
-        message: "patch Api",
-      });
-    });
+  // Important how I created the path here and It's the one I'm going to use here
+  routes() {
+    this.app.use(this.userPath, require("../routes/user"));
   }
 
   listen() {
