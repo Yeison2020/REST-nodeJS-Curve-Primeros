@@ -2,10 +2,14 @@ const { response } = require("express");
 
 // I will create functions to handle all my users http requests
 const userGet = (req, res = response) => {
-  const params = req.query;
-  console.log(params);
+  const query = req.query;
+
+  // Helps a lot when there is not information sent like if page was not send I can add 1
+  const { q, name = "No Name", apiKey, page = 1, limit } = query;
+
   res.json({
     mgs: "Get Api - Controller Yeison C",
+    query,
   });
 };
 
