@@ -1,7 +1,7 @@
 const express = require("express");
 
 // So importent need review later
-var cors = require("cors");
+const cors = require("cors");
 
 class Server {
   constructor() {
