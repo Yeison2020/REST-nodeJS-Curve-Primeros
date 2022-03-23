@@ -18,16 +18,16 @@ router.get("/", userGet);
 
 //
 
-router.put("/", userPut);
+router.put("/:id", userPut);
 
 //
-router.delete("/", userDelete);
+router.delete("/:id", userDelete);
 
 //
 
 router.post("/", userPost);
 
 //
-router.patch("/", userPatch);
+router.patch("/:id", userPatch);
 
 module.exports = router;
