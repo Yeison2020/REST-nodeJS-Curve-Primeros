@@ -3,6 +3,8 @@ const express = require("express");
 // So importent need review later
 const cors = require("cors");
 
+// How to extract that information being sent
+
 class Server {
   constructor() {
     this.app = express();
@@ -24,6 +26,12 @@ class Server {
     this.app.use(cors());
     // Palabra clave app.use (To call my middlewares)\
     // Home route default replacement
+
+    //Lectura y Parseo del el body
+    // Here I'm allow to receive that data in Json format
+    this.app.use(express.json());
+
+    //
     this.app.use(express.static("public"));
   }
 
